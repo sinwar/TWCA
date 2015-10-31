@@ -1,0 +1,25 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Recharge</title>
+        <link rel="icon" type="image/png" sizes="192x192"  href="{% static "css/logo.jpg" %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static "css/logo.jpg" %}">
+        <link rel="icon" type="image/png" sizes="96x96" href="{% static "css/logo.jpg" %}">
+        <link rel="icon" type="image/jpg" sizes="16x16" href="{% static "css/logo.jpg" %}">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static "css/blog.css" %}">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 align="center">SMS recharge app made during hackathon</h2>
+                </div>
+            </div>
+        </div>
+        <h1>{% block head %}{% endblock %}</h1>
+        {% block content %}{% endblock %}
+    </body>
+</html>
