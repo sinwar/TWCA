@@ -1,17 +1,53 @@
-{% extends "base.html" %}
-{% block title %}Login{% endblock %}
-{% block head %}Login{% endblock %}
-{% block content %}
-    {% if form.errors %}
-        <p>Your username and password didn't match. Please try again.</p>
-    {% endif %}
-    <form method="post" action=".">{% csrf_token %}
-        <table border="0">
-            <tr><th><label for="id_username">Username:</label></th><td>{{ form.username }}</td></tr>
-            <tr><th><label for="id_password">Password:</label></th><td>{{ form.password }}</td></tr>
-        </table>
-        <input type="submit" value="Login" />
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Recharge</title>
+        <link rel="icon" type="image/png" sizes="192x192"  href="{% static "css/logo.jpg" %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static "css/logo.jpg" %}">
+        <link rel="icon" type="image/png" sizes="96x96" href="{% static "css/logo.jpg" %}">
+        <link rel="icon" type="image/jpg" sizes="16x16" href="{% static "css/logo.jpg" %}">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static "css/blog.css" %}">
+        <link rel="stylesheet" href="{% static "css/animate.css" %}">
+    </head>
+    <body>
+        <div class="container">
+        <!--<img src="https://drive.google.com/open?id=0BwGDKRZRrMMXY0FzQ3I4LWFZeDQ" align="center">-->
+        {% block content %}
+        {% if form.errors %}
+              <p>Your username or password was incorrect.Please try again.</p>
+         {% endif %}
+             <div class="container">
+             <div class="row">
+            <div class="col-md-12 animated pulse infinite" align="center">
+                <h2 style="color:red;">RechIT-Recharge through SMS</h2>
+             
+            </div>
+        </div>
+    </div>
+    <div class="fom">
+    <form role="form" method="post" align="center" action="." >{% csrf_token %}
+        <div class="form-group">
+            <label for="id_username"><h4><span>UserName:</span></h4></label><br>
+            {{form.username}}
+        </div>
+        <div class="form-group">
+            <label for="id_password"><h4><span>PassWord:</span></h4></label><br>
+            {{form.password}}
+        </div>
+        <input type="submit" align="center" value="Login" />
         <input type="hidden" name="next" value="/home" />
     </form>
-    <a href="/register">Register</a>
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="signup">If you have not account <a href="/register">Sign Up</a></h4>
+        </div>
+    </div>
+</div>
 {% endblock %}
+        </div>
+    </body>
+</html>

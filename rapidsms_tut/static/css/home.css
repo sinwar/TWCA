@@ -1,0 +1,15 @@
+body{
+	background-image: url('log.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	font-family: 'Lobster', cursive;
+}
+.ron{
+	margin-top: 20%;
+	background-color: rgba(102, 153, 153, 0.5);
+	padding-top: 5%;
+	padding-left: 5%;
+	padding-right:5%;
+	padding-bottom: 5%;
+	border-radius: 10px;
+}

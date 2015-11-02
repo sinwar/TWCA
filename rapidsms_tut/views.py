@@ -47,3 +47,8 @@ def home(request):
     'home.html',
     { 'user': request.user }
     )
+'''select * from salesforce.contact
+@login_required
+def contact(request):
+    contact=filter(salesforce.contact)
+    return render_to_response('contact.html',{'contact':contact})'''

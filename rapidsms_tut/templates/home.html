@@ -1,7 +1,62 @@
-{% extends "base.html" %}
-{% block title %}This is Recharge app{% endblock %}
-{% block head %}Recharge through SMS{% endblock %}
-{% block content %}
-    <p>Welcome {{ user.username }} !!!</p>
-    <a href="/logout/">Logout</a>
-{% endblock %}
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Recharge</title>
+        <link rel="icon" type="image/png" sizes="192x192"  href="{% static "css/logo.jpg" %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static "css/logo.jpg" %}">
+        <link rel="icon" type="image/png" sizes="96x96" href="{% static "css/logo.jpg" %}">
+        <link rel="icon" type="image/jpg" sizes="16x16" href="{% static "css/logo.jpg" %}">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static "css/home.css" %}">
+        <link rel="stylesheet" href="{% static "css/animate.css" %}">
+    </head>
+    <body>
+        <div class="container">
+	{% block content %}
+		 <nav class="navbar navbar-inverse navbar-fixed-top">
+    	  <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+              <a class="navbar-brand" href="#">RechIT</a>
+              </div>
+            <div id="navbarCollapse" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav  navbar-right">
+                  <li class="active"><a href="#">Home</a></li>
+                  <li><a href="#">Wallet</a></li>
+
+                  <li><a href="/logout/">LogOut</a></li>
+            	 </ul>
+          	  </div>
+      	  </div>
+    	</nav>
+    <!-- home page part 1 -->
+    	<div class="row">
+    		<div class="col-md-12">
+    			<img src="{">
+    		</div>
+    	</div>
+    <div class="ron">
+    	<div class="row">
+    		<div class="col-md-12 ">
+    			<h3>Rechit provides recharge through SMS. You have to send message for recharge in a way like recharge amount-mobile no-username. Send help for information of cashback, talktime offers.</h3>
+    		</div>
+    	</div>
+    	<div class="row">
+    		<div class="col-md-8"></div>
+    		<div class="col-md-4">
+    			<h4 text-align="right">-THANKS</h4>
+    		</div>
+    	</div>
+	</div>
+	{% endblock %}
+	</body>
+</html>

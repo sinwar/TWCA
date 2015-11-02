@@ -1,12 +1,55 @@
-{% extends "base.html" %}
-{% block title %}User Registration{% endblock %}
-{% block head %}User Registration{% endblock %}
-{% block content %}
-    <form method="post" action=".">{% csrf_token %}
-        <table border="0">
-            {{ form.as_table }}
-        </table>
-        <input type="submit" value="Register" />
-    </form>
-    <a href="/">Login</a>
-{% endblock %}
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Recharge</title>
+        <link rel="icon" type="image/png" sizes="192x192"  href="{% static "css/logo.jpg" %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static "css/logo.jpg" %}">
+        <link rel="icon" type="image/png" sizes="96x96" href="{% static "css/logo.jpg" %}">
+        <link rel="icon" type="image/jpg" sizes="16x16" href="{% static "css/logo.jpg" %}">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static "css/blog.css" %}">
+        <link rel="stylesheet" href="{% static "css/animate.css" %}">
+    </head>
+    <body>
+        <div class="container">
+        <!--<img src="https://drive.google.com/open?id=0BwGDKRZRrMMXY0FzQ3I4LWFZeDQ" align="center">-->
+        {% block content %}
+        	<h2 class="signup">REGISTRATION</h2>
+			<div class="fom">
+			 <form role="form" method="post" align="center" action="." >{% csrf_token %}
+      			  <div class="form-group">
+           		 	<label for="id_username"><h4><span>UserName:</span></h4></label><br>
+            		{{form.username}}
+        		  </div>
+        		  <div class="form-group">
+        		    <label for="id_password"><h4><span>Email:</span></h4></label><br>
+           			{{form.email}}
+        		  </div>
+        		  <div class="form-group">
+        		    <label for="id_password"><h4><span>Mobile No:</span></h4></label><br>
+           			{{form.mobile}}
+        		  </div>
+        		  <div class="form-group">
+        		    <label for="id_password"><h4><span>PassWord:</span></h4></label><br>
+           			{{form.password1}}
+        		  </div>
+        		  <div class="form-group">
+        		    <label for="id_password"><h4><span>PassWord(again):</span></h4></label><br>
+           			{{form.password2}}
+        		  </div>
+        		  <div class="form-group">
+        		    <label for="id_password"><h4><span>Your address:</span></h4></label><br>
+           			{{form.address}}
+        		  </div>
+        		  <input type="submit" align="center" value="Register" />
+                  <input type="hidden" name="next" value="/home" />
+              </form>
+              <h4 class="signup">Have you account <a href="/">Login</a></h4>
+    	</div>
+		{% endblock %}
+        </div>
+    </body>
+</html>
